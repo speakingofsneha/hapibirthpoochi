@@ -5,5 +5,5 @@
 [x] fart sound 
 [x] time w pet + fart sound
 [x] init repo
-[ ] deploy
+[x] deploy
 [ ] custom domain
