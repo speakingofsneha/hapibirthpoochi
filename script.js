@@ -294,8 +294,8 @@ window.addEventListener('load', () => {
             particle.draw();
         }
         
-        // Show message after 3 seconds (matching audio duration)
-        if (elapsed >= totalAnimationDuration && !animationComplete) {
+        // Show message after 2 seconds (faster appearance)
+        if (elapsed >= 2000 && !animationComplete) {
             animationComplete = true;
             message.classList.add('show');
         }
