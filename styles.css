@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FEFAEE;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.pet-instruction {
+    position: absolute;
+    top: 200px;
+    text-align: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.pet-instruction-image {
+    max-width: 250px;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.pet-instruction.hidden {
+    display: none;
+}
+
+.dog-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dog-image {
+    max-width: 250px;
+    width: auto;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+#confetti-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.message {
+    position: absolute;
+    top: 200px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    text-align: center;
+}
+
+.message-image {
+    max-width: 400px;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.message.show {
+    opacity: 1;
+}
+
