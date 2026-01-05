@@ -64,10 +64,11 @@ window.addEventListener('load', () => {
         const container = dogImage.parentElement;
         const rect = dogImage.getBoundingClientRect();
         
-        // Canvas needs to be wider to accommodate confetti to the right
-        const confettiWidth = 400; // Extra width for confetti
+        // Responsive confetti width based on screen size
+        const isMobile = window.innerWidth <= 768;
+        const confettiWidth = isMobile ? 250 : 400; // Smaller on mobile
         const canvasWidth = container.offsetWidth + confettiWidth;
-        const canvasHeight = Math.max(container.offsetHeight, rect.height + 200);
+        const canvasHeight = Math.max(container.offsetHeight, rect.height + (isMobile ? 150 : 200));
         
         // Set canvas internal resolution
         canvas.width = canvasWidth;
@@ -117,7 +118,9 @@ window.addEventListener('load', () => {
             this.rotation = Math.random() * Math.PI * 2;
             this.rotationSpeed = (Math.random() - 0.5) * 0.2;
             this.finalRotation = this.rotation + (Math.random() - 0.5) * Math.PI * 0.5;
-            this.scale = Math.random() * 0.3 + 0.25; // Smaller confetti (0.25 to 0.55 scale)
+            // Responsive confetti size - smaller on mobile
+            const isMobile = window.innerWidth <= 768;
+            this.scale = isMobile ? (Math.random() * 0.2 + 0.2) : (Math.random() * 0.3 + 0.25); // Smaller on mobile (0.2 to 0.4) vs desktop (0.25 to 0.55)
             this.isSettled = false;
             this.distanceTraveled = 0;
         }
@@ -230,8 +233,10 @@ window.addEventListener('load', () => {
         
         // Create triangular formation: narrow at dog, wider to the right
         // Use deterministic distribution for consistent triangle shape
-        const maxDistance = 150; // How far RIGHT the triangle extends
-        const maxHeight = 180; // Maximum vertical spread at the far right (triangle height)
+        // Responsive sizes for mobile - confetti closer to dog on mobile
+        const isMobile = window.innerWidth <= 768;
+        const maxDistance = isMobile ? 70 : 150; // How far RIGHT the triangle extends (closer on mobile)
+        const maxHeight = isMobile ? 100 : 180; // Maximum vertical spread at the far right (triangle height)
         
         // Distribute particles evenly across the triangle
         for (let i = 0; i < numParticles; i++) {

@@ -6,4 +6,5 @@
 [x] time w pet + fart sound
 [x] init repo
 [x] deploy
+[ ] responsive to mobile
 [ ] custom domain
