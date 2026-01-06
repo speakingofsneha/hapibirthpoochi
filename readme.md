@@ -1,4 +1,7 @@
-[x] draw dawg and confetti + add png 
+lil something for my bf's 21st
+
+todo:
+[x] draw dawg & confetti + add png 
 [x] confetti animation
 [x] pet instructions 
 [x] hapi birth text 
@@ -6,5 +9,5 @@
 [x] time w pet + fart sound
 [x] init repo
 [x] deploy
-[ ] responsive to mobile
-[ ] custom domain
+[x] responsive to mobile
+[x] custom domain
